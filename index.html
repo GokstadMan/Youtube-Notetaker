@@ -7,10 +7,20 @@
     <title>Youtube-notetaker</title>
 </head>
 <body>
-    <header>
+    <header class="bg-gray-700 p-4">
+        <h1 class="text-4xl text-white text-center">Youtube Notetaker</h1>
     </header>
-    <main>
-
+    <main class="grid grid-cols-1 sm:grid-cols-2 mt-6 mx-6">
+        <div id="youtube-section" class="mr-6">
+            <p class="mb-2">Video URL:</p>
+            <input id="video-url-input" class="w-full" type="text" placeholder="https://youtube.com">
+            <button class="bg-red-500 text-white font-bold text-center w-full py-2 mt-2">Watch!</button>
+        </div>
+        <div id="notetaking-section">
+            <p class="mb-2">Enter Notes:</p>
+            <input id="video-note-taking" class="w-full" type="text" placeholder="Something good goes here..">
+            <button class="bg-gray-500 text-white font-bold text-center w-full py-2 mt-2">Save Note<button>
+        </div>
     </main>
     <footer>
 

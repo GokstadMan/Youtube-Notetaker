@@ -17,5 +17,6 @@ saveBtn.addEventListener("click", function()
             noteItem.classList.add("bg-gray-200","p-2","m-2");
             notesList.appendChild(noteItem);
             noteInput.value = "";
+            noNotesText.style.display="none";
         }
 });

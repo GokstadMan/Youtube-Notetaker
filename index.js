@@ -1,4 +1,4 @@
-let video = document.getElementById("video");
+let videoPlayer = document.getElementById("video-player");
 let videoURL = document.getElementById("video-url-input");
 let watchBtn = document.getElementById("watch-button");
 let saveNoteBtn = document.getElementById("save-note-button");
@@ -8,8 +8,7 @@ let notesList = document.getElementById("notes-list");
 let saveBtn = document.getElementById("save-note-button");
 let noNotesText = document.getElementById("no-notes-text");
 
-saveBtn.addEventListener("click", function()
-{
+saveBtn.addEventListener("click", function(){
     let note = noteInput.value;
         if(note !=="") {
             let noteItem = document.createElement("li");
@@ -20,3 +19,16 @@ saveBtn.addEventListener("click", function()
             noNotesText.style.display="none";
         }
 });
+
+function extractVideoUrl(url) {
+    return url.split("v=")[1].substring(0,11)
+}
+
+watchBtn.addEventListener("click", function(){
+    let url = videoURL.value;
+        if(url !=="") {
+            let videoID = extractVideoUrl(url);
+            videoPlayer.src = "https://youtube.com/embed" + videoID;
+            videoPlayer.classList.remove("h-0")
+        }
+})

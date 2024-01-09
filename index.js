@@ -21,14 +21,16 @@ saveBtn.addEventListener("click", function(){
 });
 
 function extractVideoUrl(url) {
-    return url.split("v=")[1].substring(0,11)
+    return url.split("v=")[1].substring(0,11);
 }
 
 watchBtn.addEventListener("click", function(){
     let url = videoURL.value;
         if(url !=="") {
             let videoID = extractVideoUrl(url);
-            videoPlayer.src = "https://youtube.com/embed" + videoID;
-            videoPlayer.classList.remove("h-0")
+            videoPlayer.src = "https://www.youtube.com/embed/" + videoID;
+            videoPlayer.classList.remove("h-0");
+            videoPlayer.classList.add("h-[200px]", "sm:h-[400px]","w-full");
+            videoURL.value = "";
         }
 })

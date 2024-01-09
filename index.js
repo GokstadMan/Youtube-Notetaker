@@ -30,7 +30,7 @@ watchBtn.addEventListener("click", function(){
             let videoID = extractVideoUrl(url);
             videoPlayer.src = "https://www.youtube.com/embed/" + videoID;
             videoPlayer.classList.remove("h-0");
-            videoPlayer.classList.add("h-[200px]", "sm:h-[400px]","w-full");
+            videoPlayer.classList.add("h-[200px]", "sm:h-[400px]","w-full","mt-8");
             videoURL.value = "";
         }
 })

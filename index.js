@@ -13,10 +13,22 @@ saveBtn.addEventListener("click", function(){
         if(note !=="") {
             let noteItem = document.createElement("li");
             noteItem.innerHTML = note;
-            noteItem.classList.add("bg-gray-200","p-2","m-2");
+            noteItem.classList.add("bg-gray-300","p-2","m-1");
             notesList.appendChild(noteItem);
             noteInput.value = "";
             noNotesText.style.display="none";
+
+            // delete-button:
+            let deleteBtn = document.createElement("button");
+            deleteBtn.innerText = "Delete Note?";
+            deleteBtn.classList.add("bg-red-300","m-1");
+            notesList.appendChild(deleteBtn);
+            deleteBtn.addEventListener("click", function () {
+                notesList.removeChild(noteItem);
+                deleteBtn.innerText = "";
+                deleteBtn.classList.remove("bg-red-300","m-1");
+            });
+
         }
 });
 

@@ -24,9 +24,11 @@ saveBtn.addEventListener("click", function(){
             deleteBtn.classList.add("bg-red-300","m-1");
             notesList.appendChild(deleteBtn);
             deleteBtn.addEventListener("click", function () {
-                notesList.removeChild(noteItem);
-                deleteBtn.innerText = "";
-                deleteBtn.classList.remove("bg-red-300","m-1");
+                let answer = prompt("You really want to delete??(y/n)");
+                if (answer === "y") {
+                    notesList.removeChild(noteItem);
+                    deleteBtn.innerText = "";
+                    deleteBtn.classList.remove("bg-red-300","m-1");}
             });
 
         }
